@@ -2,6 +2,8 @@
 
 I built this for the [GoHack](https://devpost.com/software/go-hep-web/) hackathon.
 
+It's a way to use some commands from a tool called Go-HEP for High Energy Physics that's written in Go in your browser. Built with Next.js for the frontend and Go for the backend.
+
 ## Inspiration
 
 I wanted to try and create something useful that isn't too far from the main theme of the hackathon. While command line tools are awesome, sometimes a browser can provide a better experience (especially when it comes to plotting, showing data, and interactivity)
