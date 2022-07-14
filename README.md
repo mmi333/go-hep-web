@@ -1,56 +1,38 @@
-# golang-nextjs-portable
+## Go-HEP-Web
 
-**golang-nextjs-portable** is a small Go program to showcase the `embed` package
-for bundling a static HTML export of a Next.js app.
+I built this for the [GoHack](https://devpost.com/software/go-hep-web/) hackathon.
 
-👉 Read the companion
-[article](https://v0x.nl/articles/portable-apps-go-nextjs) that walks
-through this project.
+## Inspiration
 
-<img src="https://v0x.nl/assets/articles/golang-nextjs-portable-og.png">
+I wanted to try and create something useful that isn't too far from the main theme of the hackathon. While command line tools are awesome, sometimes a browser can provide a better experience (especially when it comes to plotting, showing data, and interactivity)
 
-## Requirements
+It seemed like a nice mix of a fun, potentially useful project that's also within my skillset. 
 
-- Go 1.18
-- Yarn
+## What it does
 
-**Note:** While the `embed` package was added in Go 1.16, the `all:` prefix of
-the `embed` directive was added in 1.18. We use `all:` in this project because
-Next.js static exports contain files and direcories with underscore prefixes.
+It allows you to use some tools from Go-HEP from your browser (namely some functionalities of lcio and hplot). 
 
-## Installing
+You can view .slcio files from your browser or create a histogram and be able to zoom/pan easily.
 
-Clone or download the repository:
+## How it was built
 
-```sh
-$ git clone git@github.com:dstotijn/golang-nextjs-portable.git
-```
+The front-end is built with Next.js and the back-end is in Go.
 
-## Usage
+As for the choice of front-end, I went with Next.js because I'm familiar with it, and it made some things easier (like zooming and panning images).
 
-From the repository root directory, generate the static HTML export of the Next.js
-app, and build the Go binary:
+The back-end couldn't have been made without Go as it uses Go-HEP to provide its functionality.  
 
-```sh
-$ cd nextjs
-$ yarn install
-$ yarn run export
-$ cd ..
-$ go build .
-```
+## Challenges I ran into
 
-Then run the binary:
+Choosing the stack wasn't straightforward. (I didn't even know I could use Next.js with Go)
 
-```sh
-$ ./golang-nextjs-portable
+Marshalling the output of Go-HEP into JSON needed some work.
 
-2021/04/27 14:55:38 Starting HTTP server at http://localhost:8080 ...
-```
 
-## License
 
-[MIT](/LICENSE)
+## What I learned
 
----
+A lot about Go!
 
-© 2021 David Stotijn — [Twitter](https://twitter.com/dstotijn), [Email](mailto:dstotijn@gmail.com), [Homepage](https://v0x.nl)
+How to write a simple back-end, how to deal with I/O, JSON serialization, etc.
+
